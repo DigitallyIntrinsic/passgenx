@@ -102,28 +102,32 @@ function generatePassword() {
     choices = space.concat(alpha2);
   };
 
-    // password variable is an array placeholder for user generated amount of length
-    var password = [];
+  // password variable is an array placeholder for user generated amount of length
+  var password = [];
 
-    for (var i = 0; i < enter; i++) {
-        var pickChoices = choices[Math.floor(Math.random() * choices.length)];
-        password.push(pickChoices);
-    }
-    // This joins the password array and converts it to a string
-    var ps = password.join("");
-    UserInput(ps);
-    return ps;
-}
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
-
+  for (var i = 0; i < enter; i++) {
+    var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+    password.push(pickChoices);
   }
+  // This joins the password array and converts it to a string
+  var ps = password.join("");
+  UserInput(ps);
+  return ps;
+}
+// This puts the password value into the textbox
+// Changed function input to use textcontent
+function UserInput(ps) {
+  document.getElementById("password").textContent = ps;
 
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+}
 
+var copy = document.querySelector("#copy");
+copy.addEventListener("click", function () {
+  copyPassword();
+});
 
+function copyPassword() {
+  document.getElementById("password").select();
+  document.commandID("Copy");
+  alert("Password copied to clipboard!");
+}
