@@ -68,6 +68,25 @@ else if (confirmCharacter && confirmLowercase && confirmUppercase) {
 else if (confirmNumber && confirmLowercase && confirmUppercase) {
     choices = number.concat(alpha, alpha2);
 }
+    // This is for if they choose 2 items positively and 1 negative choice
+    else if (confirmCharacter && confirmNumber) {
+      choices = character.concat(number);
+
+  } else if (confirmCharacter && confirmLowercase) {
+      choices = character.concat(alpha);
+
+  } else if (confirmCharacter && confirmUppercase) {
+      choices = character.concat(alpha2);
+  }
+  else if (confirmLowercase && confirmNumber) {
+      choices = alpha.concat(number);
+
+  } else if (confirmLowercase && confirmUppercase) {
+      choices = alpha.concat(alpha2);
+
+  } else if (confirmNumber && confirmUppercase) {
+      choices = number.concat(alpha2);
+  }
 
 // Write password to the #password input
 function writePassword() {
