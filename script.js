@@ -13,6 +13,21 @@ alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "
 
 space = [];
 
+var choices;
+
+var toUpper = function (x) {
+  return x.toUpperCase();
+};
+
+alpha2 = alpha.map(toUpper);
+
+var get = document.querySelector("#generate");
+
+get.addEventListener("click", function () {
+  ps = generatePassword();
+  document.getElementById("password").placeholder = ps;
+});
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
