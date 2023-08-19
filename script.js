@@ -46,6 +46,29 @@ function generatePassword() {
       confirmLowercase = confirm("Will this contain Lowercase letters?");
   };
 
+  if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
+    choices = alert("You must choose a criteria!");
+
+}
+
+else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
+
+    choices = character.concat(number, alpha, alpha2);
+}
+// This is for 3 positive choices
+else if (confirmCharacter && confirmNumber && confirmUppercase) {
+    choices = character.concat(number, alpha2);
+}
+else if (confirmCharacter && confirmNumber && confirmLowercase) {
+    choices = character.concat(number, alpha);
+}
+else if (confirmCharacter && confirmLowercase && confirmUppercase) {
+    choices = character.concat(alpha, alpha2);
+}
+else if (confirmNumber && confirmLowercase && confirmUppercase) {
+    choices = number.concat(alpha, alpha2);
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
