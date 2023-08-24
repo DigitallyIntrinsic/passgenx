@@ -31,7 +31,7 @@ get.addEventListener("click", function () {
 function generatePassword() {
 
   enter = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
-
+  // This code was adapted from chatGPT, and was changed to fit the current project
   if (!enter) {
     alert("This needs a value");
   } else if (enter < 8 || enter > 128) {
