@@ -13,7 +13,7 @@ Please peruse the webpage at your leisure, please follow the link below
 
 ## See something that could be better?
 
-If you notice anything that can be made better, please do not hesitate to let me know!
+If you notice anything that can be made better, please do not hesitate to let me know! Thank you!
 
 ## License
 
